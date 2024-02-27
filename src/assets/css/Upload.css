@@ -1,0 +1,169 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, sans-serif;
+    background-image: linear-gradient(100deg, #004AAD, #000000); /* Color inicial del degradado */
+    color: white; /* Color de texto predeterminado */
+  }
+  
+
+  .container {
+    background-color: rgb(255, 255, 255); /* Fondo semi-transparente */
+    border-radius: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.26);
+    padding: 20px;
+    max-width: 600px;
+    font-family: 'Nunito', sans-serif; /* Agrega la fuente Nunito */
+    
+  }
+
+
+
+
+
+
+img {
+    width: 50px; /* ajusta el ancho del logo según tu preferencia */
+    margin-right: 10px; /* espacio entre el logo y el texto */
+}
+
+
+
+input[type=file]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #000000;
+    padding: 10px 20px;
+  
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+  }
+  
+  input[type=file]::file-selector-button:hover {
+    background: #01176f;
+  }
+
+
+      
+    
+    
+    .center {
+        text-align: center;
+        margin-top: 50px; /* Ajusta el margen superior según sea necesario */
+    }
+    
+    
+    .a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        margin: 20px;
+        width: 250px;
+        height: 150px;
+        font-weight: bold;
+       
+        
+    }
+    
+    
+    a:hover {
+        
+        color: #fff;
+        background-color: rgba(131, 131, 131, 0.445);
+        text-decoration: none;
+    }
+    
+
+    
+    
+
+    .screen-p:hover{
+
+        text-decoration: none;
+        
+
+    }
+
+    .screen-p{
+
+      
+        font-size: 20px;
+        color: #333333;
+        line-height: 1.6;
+        padding: 10px;
+
+   
+    
+        }
+
+
+
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            text-align: center;
+            
+          }
+          
+          .flex-item {
+            margin: 10px;
+            
+          }
+          
+          .screen-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 15px;
+            border-radius: 10px;
+            width: 500px;
+            height: 50px;
+            background-color: #3d3d3d;
+            transition: transform 0.3s, box-shadow 0.3s;
+            
+            
+          }
+          
+          .screen-link-1:hover {
+            transform: translateY(-5px);
+            color: #ffffff;
+            text-decoration: none;
+            background-color: #3d3d3d;
+            
+          }
+
+          .screen-link-2:hover {
+            transform: translateY(-5px);
+            color: #000000;
+            text-decoration: none;
+            background-color: #3d3d3d;
+            
+          }
+          
+          .screen-link p {
+            margin: 0;
+            padding: 10px;
+            
+          }
+          
+          .screen-link-1 {
+            background-image: url('../img/tv2.avif');
+            background-size: cover;
+            color: white;
+          }
+          
+          .screen-link-2 {
+            background-image: url('../img/tv2.avif');
+            background-size: cover;
+            color: #000000;
+            filter: brightness(3.5) saturate(100%) hue-rotate(0deg)grayscale(0%) contrast(110%);
+          }
+        
+
+          
