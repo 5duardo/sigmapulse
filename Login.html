@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-auth.js"></script>
+
+  <!--Adding Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+  <!-- NOTIFICACIONES BONITAS -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.11.0/toastify.min.css">
+  <script src="js/Login.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.11.0/toastify.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <title>Ingresar / Sigma Pulse</title>
+  <link rel="stylesheet" href="src/assets/css/login.css">
+  <link rel="stylesheet" href="src/assets/css/loader.css">
+</head>
+
+<body>
+
+
+  <!-- Contenedor del icono de carga -->
+  <div class="loader-container">
+    <!-- Icono de carga -->
+    <div class="loader"></div>
+    <!-- Texto opcional "Cargando..." -->
+  </div>
+
+  <!-- Contenido de la página -->
+  <!-- Aquí puedes colocar el contenido normal de tu página -->
+
+  <script>
+    // Simula la carga de la página
+    window.addEventListener('load', function () {
+      // Simula una carga de 2 segundos
+      setTimeout(function () {
+        // Oculta el contenedor del icono de carga
+        document.querySelector('.loader-container').style.display = 'none';
+      }, 200);
+    });
+  </script>
+
+
+
+
+
+
+
+
+  <div class="background"></div>
+  <div class="login-container">
+    <div class="col-4 center">
+      <div class="login-box">
+        <img src="assets\img\SP BLACK.png" alt="Sigma Pulse Logo" class="logo">
+        <br>
+
+
+
+
+
+
+        <div class="form-group">
+          <input type="text" class="form-control shadow-sm" id="txtEmail" name="email"
+            placeholder="Correo Electronico:">
+        </div>
+
+        <div class="form-group">
+          <input type="password" class="form-control shadow-sm" id="txtPassword" name="password"
+            placeholder="Contraseña:">
+        </div>
+
+        <center><button type="submit" class="btn btn-primary shadow" id="btnLogin"><b>Iniciar Sesion</b></button>
+        </center>
+
+        <script src="js\Auth.js"></script>
+      </div>
+    </div>
+
+
+</body>
+
+</html>
