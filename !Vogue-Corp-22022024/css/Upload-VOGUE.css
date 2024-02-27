@@ -1,0 +1,148 @@
+body{
+   
+    background-color: black;
+    font-family: "Nunito", sans-serif;
+    
+}
+
+h1{
+
+    font-family: Verdana, Geneva, sans-serif;
+    align-content: center;
+}
+
+a{
+    font-family: Verdana, Geneva, sans-serif;
+    align-content: center;
+    color: white;
+}
+
+
+
+img {
+    width: 50px; /* ajusta el ancho del logo según tu preferencia */
+    margin-right: 10px; /* espacio entre el logo y el texto */
+}
+
+
+
+input[type=file]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #000000;
+    padding: 10px 20px;
+  
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+  }
+  
+  input[type=file]::file-selector-button:hover {
+    background: #01176f;
+  }
+
+
+  button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        text-decoration: none;
+        color: #333333;
+        font-size: 18px;
+        border-radius: 0px;
+        width: 200px;
+        height: 40px;
+        font-weight: bold;
+        border: 2px solid #333333;
+        transition: 0.3s;
+        box-shadow: 5px 5px 0px 0px rgba(51, 51, 51, 1);
+        background-color: #ffffff;
+      }
+      
+
+      button:hover {
+        box-shadow: 0 0 #333;
+        color: #fff;
+        background-color: #333;
+      }
+
+
+      
+    
+    
+    .center {
+        text-align: center;
+        margin-top: 50px; /* Ajusta el margen superior según sea necesario */
+    }
+    
+    
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        text-decoration: none;
+        color: #333333;
+        font-size: 18px;
+        border-radius: 20px;
+        margin: 20px;
+        width: 250px;
+        height: 150px;
+        font-weight: bold;
+        border: 2px solid #333333;
+        transition: 0.3s;
+        box-shadow: 5px 5px 0px 0px rgba(51, 51, 51, 1);
+        background-color: #ffffff;
+    }
+    
+    a:hover {
+        box-shadow: 0 0 #333;
+        color: #fff;
+        background-color: rgba(131, 131, 131, 0.445);
+        text-decoration: none;
+    }
+    
+
+    .flex-container{
+        width: 350px;
+        height: 200px;
+        padding:10px;
+        margin: 10px auto;
+        justify-content: space-around;
+        display:-webkit-flex; 
+        display: -ms-flexbox; 
+        display: flex;
+        border-radius: 30px;
+    }
+    .flex-item{
+        display: inherit;
+        width:300px;
+        margin:5px;
+    }
+   
+    
+    .flex-container.space-around{
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: justify;
+        justify-content: space-around;
+    }
+
+
+    .screen-p:hover{
+
+        text-decoration: none;
+        
+
+    }
+
+    .screen-p{
+
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        color: #333333;
+        line-height: 1.6;
+        padding: 10px;
+   
+    
+        }

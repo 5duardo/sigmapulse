@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WINK - SP</title>
+  <link rel="stylesheet" href="css/Upload-VOGUE.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <hr>
+  <center>
+    <div>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQevg3OE9VKXA1_4GU7hKDb6n0b5euSYq4kpejGw21r2xh8MxdRfZdngx6Mkvlqvi0RMVw&usqp=CAU">
+      <h1>VOGUE</h1>
+    </div>
+  </center>
+  <hr>
+  <br>
+  <center>
+    <h1>Subir Multimedia</h1>
+    <br>
+    <form id="uploadForm">
+      <input type="file" id="fileInput" required accept=".mp4">
+      <button style="margin-top: 20px;" type="submit">Subir Imagen</button>
+    </form>
+  </center>
+  <!-- Incluir Firebase sin modular -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-compat.js"></script>
+  <script>
+    // Configurar Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyDaJiAp0HZoUhtKK1u7Ta6ONEV9AVMpXTo",
+      authDomain: "test-c3df0.firebaseapp.com",
+      projectId: "test-c3df0",
+      storageBucket: "test-c3df0.appspot.com",
+      messagingSenderId: "1006542096860",
+      appId: "1:1006542096860:web:8846dc71615dd0a3e76719"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    // Obtener referencias a los elementos del formulario y almacenamiento
+    const form = document.getElementById('uploadForm');
+    const fileInput = document.getElementById('fileInput');
+    const storage = firebase.storage();
+
+    // Manejar la subida del archivo al almacenamiento de Firebase
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const file = fileInput.files[0];
+      // Especifica la ruta de la carpeta en el almacenamiento de Firebase
+      const storageRef = storage.ref(`WINK/${file.name}`);
+      try {
+        const snapshot = await storageRef.put(file);
+        console.log('Archivo subido exitosamente:', snapshot);
+        alert('Archivo subido exitosamente!');
+        location.reload();
+      } catch (error) {
+        console.error('Error al subir el archivo:', error);
+        alert('Hubo un error al subir el archivo. Por favor, inténtalo de nuevo.');
+      }
+    });
+  </script>
+
+
+  <center>
+    <br>
+    <br>
+    <hr>
+    <h2>Regresar a Mi Cuenta</h2>
+    <button style="margin-top: 20px;" type="submit" id="btnInicio">Mi Cuenta</button>
+    <script>
+      // Obtener el botón de inicio por su ID
+      var btnInicio = document.getElementById('btnInicio');
+
+      // Agregar un evento de clic al botón de inicio
+      btnInicio.addEventListener('click', function () {
+        // Redireccionar a la página de inicio
+        window.location.href = "../account.html";
+      });
+    </script>
+
+  </center>
+
+
+
+
+
+  <!-------------------------------------------------------------------------------------------------------------------------------->
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Firebase JavaScript SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+
+  </head>
+
+  <center>
+    <br>
+    <br>
+    <hr>
+    <h2>Mis Pantallas</h2>
+    <div class="flex-container flex-start">
+      <div class="flex-item"><a href="TGU-BAC-CITYMALL SCREEN-01.html">
+          <p class="screen-p">TGU-BAC-CITYMALL SCREEN-01</p>
+        </a></div>
+      <div class="flex-item"><a href="TGU-BAC-CITYMALL SCREEN-02.html">
+          <p class="screen-p">TGU-BAC-CITYMALL SCREEN-02</p>
+        </a></div>
+      <div class="flex-item"><a href="../contact.html">
+          <p class="screen-p">[DESBLOQUEA MAS PANTALLAS]</p>
+        </a></div>
+      <div class="flex-item"><a href="../contact.html">
+          <p class="screen-p">[DESBLOQUEA MAS PANTALLAS]</p>
+        </a></div>
+    </div>
+  </center>
+
+
+
+
+
+</body>
+
+</html>

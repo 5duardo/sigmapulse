@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BAC CREDOMATIC | S-P</title>
+  <link rel="stylesheet" href="../src\assets\css\Upload.css">
+  <link rel="stylesheet" href="../src/assets/css/loader.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico">
+  
+</head>
+
+
+
+<body>
+
+
+  <!-- Contenedor del icono de carga -->
+  <div class="loader-container">
+    <!-- Icono de carga -->
+    <div class="loader"></div>
+    <!-- Texto opcional "Cargando..." -->
+  </div>
+
+  <!-- Contenido de la página -->
+  <!-- Aquí puedes colocar el contenido normal de tu página -->
+
+  <script>
+    // Simula la carga de la página
+    window.addEventListener('load', function () {
+      // Simula una carga de 2 segundos
+      setTimeout(function () {
+        // Oculta el contenedor del icono de carga
+        document.querySelector('.loader-container').style.display = 'none';
+      }, 1000);
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+  <br>
+  <center>
+    <div class="container">
+      <img
+        src="https://www2.baccredomatic.com/sites/all/themes/custom/foundation_bac/images/bacredomatic_logo_small.png">
+      <br>
+      <br>
+      <h1><b>BAC CREDOMATIC</b></h1>
+    </div>
+  </center>
+
+  <br>
+  <br>
+
+  <center>
+    <div class="container">
+      <h3><b>ACCIONES</b></h3>
+      <button class="btn btn-danger" id="logoutBtn" onclick="logout()"><b>Cerrar Sesión Actual</b></button>
+        <a href="login.html" class="btn btn-primary"><b>Cambiar de Cuenta</b></a>
+        <button class="btn btn-info" onclick="verificarYRedirigir()"><b>Mi Cuenta</b></button>
+        <a href="https://www.instagram.com/sigma.pulse" class="btn btn-success"><b>Soporte Tecnico</b></a>
+      <script>
+        // Obtener el botón de inicio por su ID
+        var btnInicio = document.getElementById('btnInicio');
+
+        // Agregar un evento de clic al botón de inicio
+        btnInicio.addEventListener('click', function () {
+          // Redireccionar a la página de inicio
+          window.location.href = "../account.html";
+        });
+      </script>
+
+
+
+
+    </div>
+
+
+  </center>
+
+  <br>
+  <br>
+
+  <div class="container">
+    <center>
+      <h2><b>PANTALLAS</b></h2>
+    </center>
+    <div class="flex-container flex-start">
+      <div class="flex-item">
+        <a href="TGU-BAC-CITYMALL SCREEN-01.html" class="screen-link screen-link-1">
+          <p class="screen-text">TGU-BAC-CITYMALL SCREEN-01</p>
+        </a>
+      </div>
+      <div class="flex-item">
+        <a href="TGU-BAC-CITYMALL SCREEN-02.html" class="screen-link screen-link-1">
+          <p class="screen-text">TGU-BAC-CITYMALL SCREEN-02</p>
+        </a>
+      </div>
+      <div class="flex-item">
+        <a href="../contact.html" class="screen-link screen-link-2">
+          <p class="screen-text">[DESBLOQUEA MAS PANTALLAS]</p>
+        </a>
+      </div>
+      <div class="flex-item">
+        <a href="../contact.html" class="screen-link screen-link-2">
+          <p class="screen-text">[DESBLOQUEA MAS PANTALLAS]</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-------------------------------------------------------------------------------------------------------------------------------->
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Firebase JavaScript SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+
+  </head>
+
+</body>
+
+</html>

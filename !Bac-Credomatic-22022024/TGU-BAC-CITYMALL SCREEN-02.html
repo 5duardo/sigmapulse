@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BAC CREDOMATIC - SP</title>
+  <link rel="stylesheet" href="../src\assets\css\Upload.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <hr>
+  <center>
+    <div>
+      <img
+        src="https://www2.baccredomatic.com/sites/all/themes/custom/foundation_bac/images/bacredomatic_logo_small.png">
+      <h1>BAC CREDOMATIC</h1>
+      <hr>
+    </div>
+  </center>
+
+  <center>
+    <h2>Regresar a Mi Cuenta</h2>
+    <button style="margin-top: 20px;" type="submit" id="btnInicio">Mi Cuenta</button>
+    <script>
+      // Obtener el botón de inicio por su ID
+      var btnInicio = document.getElementById('btnInicio');
+
+      // Agregar un evento de clic al botón de inicio
+      btnInicio.addEventListener('click', function () {
+        // Redireccionar a la página de inicio
+        window.location.href = "../account.html";
+      });
+    </script>
+
+  </center>
+
+
+  <center>
+    <hr>
+    <br>
+    <br>
+    <h1>Subir Multimedia</h1>
+    <br>
+    <form id="uploadForm">
+      <input type="file" id="fileInput" required accept=".mp4">
+      <button style="margin-top: 20px;" type="submit">Subir Imagen</button>
+    </form>
+  </center>
+  <!-- Incluir Firebase sin modular -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-compat.js"></script>
+  <script>
+    // Configurar Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyDaJiAp0HZoUhtKK1u7Ta6ONEV9AVMpXTo",
+      authDomain: "test-c3df0.firebaseapp.com",
+      projectId: "test-c3df0",
+      storageBucket: "test-c3df0.appspot.com",
+      messagingSenderId: "1006542096860",
+      appId: "1:1006542096860:web:8846dc71615dd0a3e76719"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    // Obtener referencias a los elementos del formulario y almacenamiento
+    const form = document.getElementById('uploadForm');
+    const fileInput = document.getElementById('fileInput');
+    const storage = firebase.storage();
+
+    // Manejar la subida del archivo al almacenamiento de Firebase
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const file = fileInput.files[0];
+      // Especifica la ruta de la carpeta en el almacenamiento de Firebase
+      const storageRef = storage.ref(`WINK/${file.name}`);
+      try {
+        const snapshot = await storageRef.put(file);
+        console.log('Archivo subido exitosamente:', snapshot);
+        alert('Archivo subido exitosamente!');
+        location.reload();
+      } catch (error) {
+        console.error('Error al subir el archivo:', error);
+        alert('Hubo un error al subir el archivo. Por favor, inténtalo de nuevo.');
+      }
+    });
+  </script>
+
+
+
+
+  <center>
+    <br>
+    <br>
+    <hr>
+    <h2>Mis Pantallas</h2>
+    <div class="flex-container flex-start">
+      <div class="flex-item"><a href="TGU-BAC-CITYMALL SCREEN-01.html"><p class="screen-p">TGU-BAC-CITYMALL SCREEN-01</p></a></div>
+      <div class="flex-item"><a href="TGU-BAC-CITYMALL SCREEN-02.html"><p class="screen-p">TGU-BAC-CITYMALL SCREEN-02</p></a></div>
+      <div class="flex-item"><a href="../contact.html"><p class="screen-p">[DESBLOQUEA MAS PANTALLAS]</p></a></div>
+      <div class="flex-item"><a href="../contact.html"><p class="screen-p">[DESBLOQUEA MAS PANTALLAS]</p></a></div>
+   </div>
+  </center>
+
+
+
+
+
+  <!-------------------------------------------------------------------------------------------------------------------------------->
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Firebase JavaScript SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+    <style>
+      .card {
+        width: 300px;
+        /* Establece el ancho de todas las tarjetas */
+        border: 1px solid #ccc;
+        /* Añade un borde para mayor claridad */
+        margin: 5px;
+        /* Ajusta el margen entre las tarjetas según sea necesario */
+        display: inline-block;
+        /* Permite que las tarjetas se muestren en línea */
+
+
+
+      }
+
+      .card img,
+      .card video {
+        width: 100%;
+        /* Ajusta el ancho de las imágenes y vídeos al 100% de la tarjeta */
+        height: 100%;
+        /* Ajusta la altura de las imágenes y vídeos al 100% de la tarjeta */
+        object-fit: cover;
+        /* Ajusta el tamaño de la imagen o vídeo para que cubra toda la tarjeta */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <hr>
+      <h1 class="text-center mb-4">TGU-BAC-CITYMALL SCREEN-02</h1>
+      <div id="fileList" class="row"></div>
+    </div>
+
+    <!-- Firebase Configuration -->
+    <script>
+
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+
+      const firestore = firebase.firestore();
+
+      const fileList = document.getElementById('fileList');
+
+      // Obtener archivos de Firebase Storage
+      async function getFiles() {
+        fileList.innerHTML = ''; // Limpiar la lista antes de cargar archivos
+
+        const filesRef = storage.ref('WINK/');
+        const files = await filesRef.listAll();
+
+        files.items.forEach(async (itemRef) => {
+          const url = await itemRef.getDownloadURL();
+          const fileName = itemRef.name;
+
+          const div = document.createElement('div');
+          div.className = 'col-md-4 mb-4';
+
+          if (fileName.endsWith('.jpg') || fileName.endsWith('.jpeg') || fileName.endsWith('.png') || fileName.endsWith('.gif')) {
+            // Si es una imagen
+            div.innerHTML = `
+                      <div class="card">
+                        <img src="${url}" class="card-img-top card-img-small" alt="${fileName}">
+                        <div class="card-body">
+                          <h5 class="card-title">${fileName}</h5>
+                          <button class="btn btn-danger" onclick="deleteFile('${fileName}')">Eliminar</button>
+                        </div>
+                      </div>
+                    `;
+          } else if (fileName.endsWith('.mp4') || fileName.endsWith('.webm') || fileName.endsWith('.ogg')) {
+            // Si es un video
+            div.innerHTML = `
+                      <div class="card">
+                        <video controls class="card-img-top card-img-small">
+                          <source src="${url}" type="video/mp4">
+                          Your browser does not support the video tag.
+                        </video>
+                        <div class="card-body">
+                          <h5 class="card-title">${fileName}</h5>
+                          <button class="btn btn-danger" onclick="deleteFile('${fileName}')">Eliminar</button>
+                        </div>
+                      </div>
+                    `;
+          }
+
+          fileList.appendChild(div);
+        });
+      }
+
+      // Eliminar archivo de Firebase Storage y Firestore
+      function deleteFile(fileName) {
+        setTimeout(function () {
+          location.reload();
+        }, 5000); // 5000 milisegundos = 5 segundos
+
+        const fileRef = storage.ref('WINK/' + fileName);
+
+
+        fileRef.delete().then(() => {
+          // Eliminar también la referencia en Firestore si es necesario
+          const fileDocRef = firestore.collection('WINK/').doc(fileName);
+          fileDocRef.delete().then(() => {
+            console.log('Archivo eliminado correctamente');
+            getFiles(); // Actualizar la lista de archivos después de eliminar
+
+          }).catch((error) => {
+            console.error('Error eliminando archivo de Firestore:', error);
+
+          });
+        }).catch((error) => {
+          console.error('Error eliminando archivo de Storage:', error);
+
+        });
+      }
+
+      // Mostrar archivos al cargar la página
+      getFiles();
+    </script>
+
+
+
+  </body>
+
+</html>
